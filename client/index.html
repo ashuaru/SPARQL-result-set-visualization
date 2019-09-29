@@ -1,0 +1,258 @@
+<html>
+
+<head>
+	<title>VizResu</title>
+	<link href="css/bootstrap.css" rel="stylesheet" />
+	<link href="css/google-fonts.css" rel="stylesheet">
+	<link href="css/index.css" rel="stylesheet" />
+	<link href="css/page.css" rel="stylesheet" />
+
+	<link href="css/areachart.css" rel="stylesheet" />
+	<link href="css/barchart.css" rel="stylesheet" />
+	<link href="css/bubble_chart.css" rel="stylesheet" />
+	<link href="css/bubble_menu.css" rel="stylesheet" />
+	<link href="css/circle_packing.css" rel="stylesheet" />
+	<link href="css/donut_chart.css" rel="stylesheet" />
+	<link href="css/geomap.css" rel="stylesheet" />
+	<link href="css/horizontalGroupBarChart.css" rel="stylesheet" />
+	<link href="css/lolipop.css" rel="stylesheet" />
+	<link href="css/lolipop_single.css" rel="stylesheet" />
+	<link href="css/multi_bar_chart.css" rel="stylesheet" />
+	<link href="css/multi_line_chart.css" rel="stylesheet" />
+	<link href="css/pie_chart.css" rel="stylesheet" />
+	<link href="css/platelets.css" rel="stylesheet" />
+	<link href="css/radial_bar_chart.css" rel="stylesheet" />
+	<link href="css/rectangular_area_chart.css" rel="stylesheet" />
+	<link href="css/tree_chart.css" rel="stylesheet" />
+	<link href="css/condegram.css" rel="stylesheet" />
+	<link href="css/geomap1.css" rel="stylesheet" />
+	<link href="css/heatmap.css" rel="stylesheet" />
+	<link href="css/heatmap2.css" rel="stylesheet" />
+	<link href="css/force_directed.css" rel="stylesheet" />
+
+	<script src="lib/jQuery.min.js"></script>
+	<script src="lib/d3.v3.min.js"></script>
+	<script src="lib/d3.v4.min.js"></script>
+	<script src="lib/d3-scale-chromatic.v1.min.js"></script>
+	<script src="lib/d3-tip.js"></script>
+	<script src="lib/d3.tip.v0.6.3.js"></script>
+	<script src="lib/d3-radial.js"></script>
+	<script src="lib/queue.v1.min.js"></script>
+	<script src="lib/topojson.v1.min.js"></script>
+	<script src="lib/world_countries.js"></script>
+	<script src="lib/xml2json.js"></script>
+	<script src="lib/world-50m.js"></script>
+
+	<script src="util/tree_chart.js"></script>
+	<script src="util/donut_chart.js"></script>
+	<script src="util/bubble_chart.js"></script>
+	<script src="util/bar_chart.js"></script>
+	<script src="util/multiline_chart.js"></script>
+	<script src="util/multi_bar_chart.js"></script>
+	<script src="util/horizontalGroupBarChart.js"></script>
+	<script src="util/geomap.js"></script>
+	<script src="util/area_chart.js"></script>
+	<script src="util/platelets.js"></script>
+	<script src="util/rectangular_area_chart.js"></script>
+	<script src="util/radialbar.js"></script>
+	<script src="util/radial_bar_chart.js"></script>
+	<script src="util/pie_chart.js"></script>
+	<script src="util/lolipop.js"></script>
+	<script src="util/lollipop_single.js"></script>
+	<script src="util/bubble_menu.js"></script>
+	<script src="util/circle_packing.js"></script>
+	<script src="util/condegram.js"></script>
+	<script src="util/geomap1.js"></script>
+	<script src="util/heatmap.js"></script>
+	<script src="util/heatmap2.js"></script>
+	<script src="util/force_directed.js"></script>
+
+	<script src="util/util.js"></script>
+	<script src="charts/achart.js"></script>
+	<script src="charts/bchart.js"></script>
+	<script src="charts/cfchart.js"></script>
+	<script src="charts/custom.js"></script>
+	<script src="charts/dchart.js"></script>
+	<script src="charts/echart.js"></script>
+	<script src="charts/gchart.js"></script>
+	<script src="charts/hchart.js"></script>
+	<script src="charts/ichart.js"></script>
+	<script src="charts/jchart.js"></script>
+	<script src="charts/kchart.js"></script>
+	<script src="charts/lchart.js"></script>
+	<script src="charts/mchart.js"></script>
+	<script src="charts/nchart.js"></script>
+	<script src="charts/ochart.js"></script>
+
+	<script src="index.js"></script>
+</head>
+
+<body>
+	<div class="header">
+		<span style="margin-left:20px;font-size: 50px;font-weight: bolder;">
+			<img src="images/logo.png" title="Logo" />
+		</span>
+		<div class="topnav">
+			<a href="home.html" class="links" style="margin-left:40px;">Home </a>
+			<a href="#" style="font-weight: bolder;" class="links">VizResu</a>
+			<a href="http://sda.tech/SEOontology/Documentation/SEO.html" target="_blank">SEO Ontology</a>
+			<a href="http://kddste.sda.tech/EVENTSKG-Dataset/EVENTSKG_R2.html" target="_blank">EVENTSKG</a>
+			<a href="http://kddste.sda.tech/sparql" target="_blank">SPARQL endpoint</a>
+		</div>
+	</div>
+	<center style="width:90%;margin-left:50px;margin-top:20px;height:70%;">
+		<div>
+			<div class="article">
+				<select id="chartType" onchange="showHideOptionsDiv(this.value);" class="form-control" style="width:800px;">
+					<option value="">Select a User query</option>
+					<option value="a">Query 01 - List all events in the field F that took place between Y and Z in a country C.</option>
+					<option value="b">Query 02 - List the events related to field F with an acceptance rate less than A.</option>
+					<option value="c">Query 03 - List the number of submitted and accepted papers of the series S since a date D</option>
+					<option value="d">Query 04 - List the top-N countries host(along with events) in computer science research communities..</option>
+					<option value="e">Query 05 - List the subfields of CS where a country C has hosted more events since a date D</option>
+					<option value="f">Query 06 - List the acceptance rate of a series S since a date D</option>
+					<option value="g">Query 07 - List the top-N events occurred in a month M.</option>
+					<option value="h">Query 08 - List the geographical distribution of the series in each CS community.</option>
+					<option value="i">Query 09 - Find the field productivity for CS research communities in a year Y</option>
+					<option value="j">Query 10 - Find the top-N series in terms of the number of its editions</option>
+					<!--option value="k">Query 11 - List the time distribution of events in each CS community.</option>
+					<option value="l">Query 12 - Find the geographical distribution of the top event in each CS community</option>
+					<option value="m">Query 13 - Which events have had Google, Amazon, FB as their sponsors in 2018, 2017, 2016?</option>
+					<option value="n">Query 14 - Which Publisher has published most of the event's proceedings in CS communities?</option>
+					<option value="o">Query 15 - Find the Average acceptance rate of top ten series in CS community </option>
+					<option value="custom">Type your own query</option-->
+				</select>
+			</div>
+			<div id="a_options" style="display: none; margin-top:20px;" class="options">
+				List all events in the field&nbsp;
+				<select id="a_fields" class="form-control"></select> &nbsp; that took place between&nbsp;&nbsp;
+				<input type="date" id="a_from_date" value="2014-01-01" class="form-control"> and
+				<input type="date" id="a_to_date" value="2019-03-24" class="form-control"> in
+				<select id="a_country" class="form-control"></select>&nbsp;&nbsp;
+				<input type="button" value="Execute" onclick="generateAQuery();" class="form-control btn btn-primary">
+			</div>
+			<div id="b_options" style="display: none; margin-top:20px;" class="options">
+				List the events related to
+				<select id="b_fields" class="form-control"></select> &nbsp;with an acceptance rate&nbsp;
+				<select id="b_op" class="form-control" style="width:60px;">
+					<option value=">"> &gt;</option>
+					<option value=">="> ≥</option>
+					<option value="<"> &lt;</option>
+					<option value="<="> ≤</option>
+					<option value="="> =</option>
+					<option value="!="> ≠</option>
+				</select>
+				&nbsp;
+				<input type="text" id="b_acrate" value="0.50" style="width:60px;" class="form-control" />&nbsp;&nbsp;
+				<input type="button" value="Execute" onclick="generateBQuery();" class="btn btn-primary" />
+			</div>
+			<div id="c_options" style="display: none; margin-top:20px;" class="options">
+				List the number of submitted and accepted papers of the series
+				<select id="c_series" class="form-control"></select>
+				&nbsp;since&nbsp;
+				<input type="date" id="c_date" value="2013-01-01" class="form-control" /> &nbsp;&nbsp;&nbsp;
+				<input type="button" value="Execute" onclick="generateCQuery(false);" class="btn btn-primary" />
+			</div>
+			<div id="d_options" style="display: none; margin-top:20px;" class="options">
+				List the top
+				<input type="text" id="d_count" value="10" style="width:60px;"> countries host (along with events) in computer science research communities. &nbsp;&nbsp;&nbsp;
+				<input type="button" value="Execute" onclick="generateDQuery();" class="btn btn-primary" />
+			</div>
+			<div id="e_options" style="display: none; margin-top:20px;" class="options">
+				List the subfields of CS
+				<select id="e_country" class="form-control"></select>&nbsp; has hosted more events since
+				<input type="date" id="e_date" value="2013-01-01" class="form-control" /> &nbsp;&nbsp;&nbsp;
+				<input type="button" value="Execute" onclick="generateEQuery();" class="btn btn-primary" />
+			</div>
+			<div id="f_options" style="display: none; margin-top:20px;" class="options">
+				List the acceptance rate of the series
+				<select id="f_series" class="form-control"></select>
+				&nbsp;since&nbsp;
+				<input type="date" id="f_date" value="2013-01-01" class="form-control" /> &nbsp;&nbsp;&nbsp;
+				<input type="button" value="Execute" onclick="generateCQuery(true);" class="btn btn-primary" />
+			</div>
+			<div id="g_options" style="display: none; margin-top:20px;" class="options">
+				List the top events that occur in the month of &nbsp;
+				<select id="g_month" class="form-control"></select>
+				by series&nbsp;
+				<input type="button" value="Execute" onclick="generateGQuery();" class="btn btn-primary" />
+			</div>
+			<div id="h_options" style="display: none; margin-top:20px;" class="options">
+				List the geographical distribution of the &nbsp;
+				<select id="h_series" class="form-control"></select>
+				based on number of events&nbsp;
+				<input type="button" value="Execute" onclick="generateHQuery();" class="btn btn-primary" />
+			</div>
+			<div id="i_options" style="display: none; margin-top:20px;" class="options">
+				Find the field productivity for CS research communities &nbsp;
+				<input type="text" id="i_year" value="2017" style="width:60px;" class="form-control" />&nbsp;&nbsp;
+				<input type="button" value="Execute" onclick="generateIQuery();" class="btn btn-primary" />
+			</div>
+			<div id="j_options" style="display: none; margin-top:20px;" class="options">
+				Find top&nbsp;
+				<input type="text" id="j_count" value="10" style="width:60px;" class="form-control" />&nbsp;&nbsp; series in terms of the number of events
+				<input type="button" value="Execute" onclick="generateJQuery();" class="btn btn-primary" />
+			</div>
+			<div id="k_options" style="display: none; margin-top:20px;" class="options">
+				List the Time distribution of the &nbsp;
+				<select id="k_series" class="form-control"></select>
+				in each CS community&nbsp;
+				<input type="button" value="Execute" onclick="generateKQuery();" class="btn btn-primary" />
+			</div>
+			<div id="l_options" style="display: none; margin-top:20px;" class="options">
+				Find the geographical distribution of the series in CS community &nbsp;
+				<input type="text" id="l_year" value="2017" style="width:60px;" class="form-control" />&nbsp;&nbsp; in each CS community
+				<input type="button" value="Execute" onclick="generateLQuery();" class="btn btn-primary" />
+			</div>
+			<div id="m_options" style="display: none; margin-top:20px;" class="options">
+				Which events have had Google, Amazon, FB as their sponsors in 2018, 2017, 2016? &nbsp;
+				<input type="button" value="Execute" onclick="generateMQuery();" class="btn btn-primary" />
+			</div>
+
+			<div id="n_options" style="display: none; margin-top:20px;" class="options">
+				Which Publisher has published most of the event's proceedings in CS communities? &nbsp;
+				<input type="button" value="Execute" onclick="generateNQuery();" class="btn btn-primary" />
+			</div>
+
+			<div id="o_options" style="display: none; margin-top:20px;" class="options">
+				Find the Average acceptance rate of each series in CS community &nbsp;
+				<input type="button" value="Execute" onclick="generateOQuery();" class="btn btn-primary" />
+			</div>
+
+
+			<div style="margin-top:20px;display: none;" id="query_div">
+				<div id="query_desc">Corresponding SPARQL query</div>
+				<textarea id="query" rows="10" cols="120"></textarea>
+				<!--div style="margin-top:10px;" id="axis_params">
+					X axis:
+					<input type="text" id="x_param" style="width:150px;" class="form-control" /> Y axis:
+					<input type="text" id="y_param" style="width:150px;" class="form-control" />
+				</div-->
+				<div style="margin-top:10px;">
+					<select id="chart_main_type" class="form-control type_params" onchange="changeChartMainType();">
+						<option value="manual">Manual</option>
+						<option value="automatic">Automatic</option>
+					</select>
+					<select id="chart_type" class="form-control type_params" style="display:none;"></select>
+					<input type="button" value="Visualize" id="chart_button" onclick="sendRequest();" class="btn btn-primary">
+				</div>
+			</div>
+		</div>
+		<div id="chart_area">
+			<div id='tooltip'></div>
+		</div>
+
+		<div id="chart_area_1" class="chart_areas"></div>
+		<div id="chart_area_2" class="chart_areas"></div>
+		<div id="chart_area_3" class="chart_areas"></div>
+		<div id="chart_area_4" class="chart_areas"></div>
+		<div id="chart_area_5" class="chart_areas"></div>
+
+		<div id="legends"></div>
+		<div style="margin-top:300px;">
+			<img src="images/loading.gif" id="loading_gif" style="display:none;" />
+		</div>
+	</center>
+</body>
+
+</html>

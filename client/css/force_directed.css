@@ -1,0 +1,42 @@
+.force_directed .link {
+    fill: none;
+    stroke: #666;
+    stroke-width: 1.5px;
+  }
+  .force_directed  path.link.suit {
+    stroke:red;
+  }
+   
+  .force_directed  path.link.licensing {
+    stroke:blue
+    ;
+  }
+   
+  .force_directed path.link.resolved {
+    stroke:green;
+  }
+  .force_directed circle {
+    fill: #ccc;
+    stroke: #333;
+    stroke-width: 1.5px;
+  }
+  .force_directed .node.fixed {
+    fill: #f00;
+  }
+  .force_directed text {
+    font: 10px sans-serif;
+    pointer-events: none;
+    text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff;
+  }
+  .force_directed div.d4-tip {
+    line-height: 1;
+    font-weight: bold;
+    padding: 12px;
+    background: #001;
+    color: #F00;
+    border-radius: 2px;
+    pointer-events: none;
+  }
+  .force_directed .d4-tip span {
+    color: #ff00c7;
+  }

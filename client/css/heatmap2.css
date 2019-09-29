@@ -1,0 +1,18 @@
+.heatmap2 rect.bordered {
+    stroke: #E6E6E6;
+    stroke-width:2px;   
+  }
+
+  .heatmap2  text.mono {
+    font-size: 9pt;
+    font-family: Consolas, courier;
+    fill: #aaa;
+  }
+
+  .heatmap2  text.axis-workweek {
+    fill: #000;
+  }
+
+  .heatmap2  text.axis-worktime {
+    fill: #000;
+  }

@@ -1,0 +1,39 @@
+
+  .condegram .axis path {
+    fill: none;
+    stroke: #999;
+    stroke-dasharray: 2 3;
+  }
+  .condegram .axis text {
+    font-size: 13px;
+    stroke: #222;
+  }
+  .condegram  text.title {
+    font-size: 24px;
+  }
+  .condegram  circle.tick {
+    fill: #f3f3f3;
+    stroke: #999;
+    stroke-dasharray: 2 3;
+  }
+  .condegram path.spiral {
+    fill: none;
+    stroke: #ee8d18;
+    stroke-width: 3px;
+  }
+
+
+  .condegram_tooltip {
+background: #eee;
+box-shadow: 0 0 5px #999999;
+color: #333;
+font-size: 12px;
+left: 130px;
+padding: 10px;
+position: absolute;
+text-align: center;
+top: 95px;
+z-index: 10;
+display: block;
+opacity: 0;
+}
