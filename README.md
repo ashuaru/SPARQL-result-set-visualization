@@ -13,7 +13,7 @@ First you have to download and install the following:
 4. pandas
 
 # Instruction
-Following the instruction:
+Following this instruction:
 1. Download and install node js package from this link https://nodejs.org/en/.
 2. Download and install python from this link https://www.python.org/downloads/
 3. Install scikit-learn via command prompt
