@@ -17,8 +17,8 @@ Following this instruction:
 5. Open the command prompt from the project folder and initialize the node functionalities using command
   `npm i`.
 6. To enable the local host server via command prompt `node app.js`. In browser, hit http://localhost:4800 to view the app. 
-# Sample visualizatin charts
-![Bubble charts](SPARQL-result-set-visualization/client/images/bubble.PNG)
+# Sample visualizatin chart
+![Bubble chart](/client/images/bubble.PNG)
 # Running VizResu
 
 In browser, hit http://localhost:4800 to view the app.
