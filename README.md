@@ -6,7 +6,7 @@ A decision tree classifier is used to automatically detect the type of the produ
 VizResu is designed to support semantic data analysis by visualizing the results of predefined query templates using an asynchronous web application.
 
 
-# Prerequisits and instructions for installation
+# Prerequisites and instructions for installation
 Following this instruction:
 1. Download and install node js package from this link https://nodejs.org/en/.
 2. Download and install python from this link https://www.python.org/downloads/.
