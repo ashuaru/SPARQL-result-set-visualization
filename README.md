@@ -24,4 +24,4 @@ Following this instruction:
 In browser, hit http://localhost:4800 to view the app.
 Start server using node app.js
 
-A video demonstration is available at []
+A video demonstration is available at [https://youtu.be/us7Tz955Lrs]
