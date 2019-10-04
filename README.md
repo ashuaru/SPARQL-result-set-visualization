@@ -16,3 +16,5 @@ First you have to download and install the following:
 
 In browser, hit http://localhost:4800 to view the app.
 Start server using node app.js
+
+A video demonstration is available at []
