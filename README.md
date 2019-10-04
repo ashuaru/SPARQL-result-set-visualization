@@ -12,6 +12,10 @@ First you have to download and install the following:
 3. scikit learn 
 4. pandas
 
+# Instruction
+1.Download and install node js package from this link https://nodejs.org/en/.
+2.Download and install python from thsi link https://www.python.org/downloads/
+
 # Running VizResu
 
 In browser, hit http://localhost:4800 to view the app.
