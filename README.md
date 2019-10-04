@@ -9,14 +9,14 @@ VizResu is designed to support semantic data analysis by visualizing the results
 # Prerequisits and instructions for installation
 Following this instruction:
 1. Download and install node js package from this link https://nodejs.org/en/.
-2. Download and install python from this link https://www.python.org/downloads/
-3. Install scikit-learn via command prompt
+2. Download and install python from this link https://www.python.org/downloads/.
+3. Install scikit-learn via command prompt:
    `pip install -U scikit-learn`
-4. Install pandas via command prompt
+4. Install pandas via command prompt:
   `pip install pandas`
 5. Open the command prompt from the project folder and initialize the node functionalities using command
-  `npm i`
-6. To enable the local host server via command prompt `node app.js`.In browser, hit http://localhost:4800 to view the app. 
+  `npm i`.
+6. To enable the local host server via command prompt `node app.js`. In browser, hit http://localhost:4800 to view the app. 
 
 # Running VizResu
 
