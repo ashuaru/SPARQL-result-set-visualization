@@ -21,6 +21,8 @@ Following this instruction:
 ![Bubble chart](/client/images/bubble.PNG)
 
  This bubble chart describes the visualized result of top ten countries hosted most of the events in computer science research communities.
+ # Workflow of VizResu
+ ![Workflow](/client/images/UI.PNG)
 # Running VizResu
 
 In browser, hit http://localhost:4800 to view the app.
