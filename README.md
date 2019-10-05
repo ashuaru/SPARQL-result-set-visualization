@@ -23,9 +23,16 @@ Following this instruction:
  This bubble chart describes the visualized result of top ten countries hosted most of the events in computer science research communities.
  # Workflow of VizResu
  ![Workflow](/client/images/UI.PNG)
+ 
+  1) Selecting one of the query predefined queries. 
+  2) Entering appropriate query parameters.
+  3) Displaying corresponding SPARQL query with the ability of further modification.
+  4) Selecting either manual (different chart type options are provided) or automatic charts type detection.
+  5) Visualizing the SPARQL query results.
+  6) interactive charts produced.
 # Running VizResu
 
 In browser, hit http://localhost:4800 to view the app.
 Start server using node app.js
 
-A video demonstration is available at [https://youtu.be/us7Tz955Lrs]
+
