@@ -19,6 +19,7 @@ Following this instruction:
 6. To enable the local host server via command prompt `node app.js`. In browser, hit http://localhost:4800 to view the app. 
 # Sample visualization chart
 ![Bubble chart](/client/images/bubble.PNG)
+This bubble chart describes the visualized result of top ten countries hosted most of the events in computer science research communities.
 # Running VizResu
 
 In browser, hit http://localhost:4800 to view the app.
