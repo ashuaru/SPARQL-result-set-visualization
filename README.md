@@ -8,15 +8,15 @@ VizResu is designed to support semantic data analysis by visualizing the results
 
 # Prerequisites and instructions for installation
 Following this instruction:
-1. Download and install node js package from this link https://nodejs.org/en/.
-2. Download and install python from this link https://www.python.org/downloads/.
+1. Download and install Node JS from this link https://nodejs.org/en/.
+2. Download and install Python from this link https://www.python.org/downloads/.
 3. Install scikit-learn via command prompt:
    `pip install -U scikit-learn`
 4. Install pandas via command prompt:
   `pip install pandas`
-5. Open the command prompt from the project folder and initialize the node functionalities using command
+5. Open the command prompt from the project folder and install the node dependencies using command
   `npm i`.
-6. To enable the local host server via command prompt `node app.js`. In browser, hit http://localhost:4800 to view the app. 
+6. In command prompt,run `node app.js`. In browser, hit http://localhost:4800 to view the app. 
 # Sample visualization chart
 ![Bubble chart](/client/images/bubble.PNG)
 
@@ -30,6 +30,7 @@ Following this instruction:
   4) Selecting either manual (different chart type options are provided) or automatic charts type detection.
   5) Visualizing the SPARQL query results.
   6) Interactive charts produced.
+  
 # Running VizResu
 
 In browser, hit http://localhost:4800 to view the app.
