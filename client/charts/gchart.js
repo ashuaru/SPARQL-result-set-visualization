@@ -1,7 +1,7 @@
 function generateGQuery() {
     var month = $("#g_month").val();
 
-    var lastQueryParams = { "g_month": month};
+    var lastQueryParams = { "g_month": month };
     localStorage.setItem("last_query_params", JSON.stringify(lastQueryParams));
     localStorage.setItem("last_query_type", "g");
 
@@ -117,9 +117,9 @@ function constructGradialbarchart(results) {
             "value": value
         })
     });
-    drawradialbarr(flatArray, min, max);
+    drawRadialChart(flatArray, min, max);
 }
-function constructGDonutChart(results){
+function constructGDonutChart(results) {
     /*var resultModified = [];
     var count = 0;
     results.forEach(data => {
@@ -144,34 +144,34 @@ function constructGDonutChart(results){
     results.forEach(data => {
         var uri = data.binding[0].uri.split("#")[1];
         var val = data.binding[1].literal["#text"];
-        dataObj[uri]=val;
+        dataObj[uri] = val;
     });
 
     drawPieChart(dataObj);
 }
 function drawGlolipop(results) {
     var loliData = [];
-    var maxVal=-Infinity, minVal=Infinity;
+    var maxVal = -Infinity, minVal = Infinity;
     results.forEach((obj, i) => {
-       var uri = obj.binding[0].uri.split("#")[1];
+        var uri = obj.binding[0].uri.split("#")[1];
         var val = Number(obj.binding[1].literal["#text"]);
-        if(val>maxVal){
+        if (val > maxVal) {
             maxVal = val;
         }
-        
+
         loliData.push({
             Country: uri,
             Value: val
         })
     });
-    drawSingleLoliPop(loliData,maxVal);
-}  
+    drawSingleLoliPop(loliData, maxVal);
+}
 
 function constructGChart(results) {
     var chartSubType = $("#chart_type").val();
-    if (chartSubType == "radial_bar") {
+    if (chartSubType == "radial_bar_chart") {
         constructGRadialBarChart(results);
-    }else if (chartSubType == "donut") {
+    } else if (chartSubType == "donut") {
         constructGDonutChart(results);
     } else if (chartSubType == "radialbar") {
         constructGradialbarchart(results)

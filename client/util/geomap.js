@@ -51,7 +51,7 @@ function drawCountryGraph(flatArray) {
         .data(data.features)
         .enter().append("path")
         .attr("d", path)
-        .style("fill", function (d) { return color(populationById[d.id]) || "#b0b0b0"; })
+        .style("fill", function (d) { return color(populationById[d.id]) || "#DCDCDC"; })
         .style('stroke', 'white')
         .style('stroke-width', 1.5)
         .style("opacity", 0.8)
@@ -110,6 +110,6 @@ function drawCountryGraph(flatArray) {
             //}
         }
     }
-    legendStr += `<span class="legend_rect" style="background-color:#b0b0b0;"></span> <span style="float:left;line-height:1">0</span><br>`;
+    legendStr += `<span class="legend_rect" style="background-color:#DCDCDC;"></span> <span style="float:left;line-height:1">0</span><br>`;
     $("#legends").html(legendStr);
 }

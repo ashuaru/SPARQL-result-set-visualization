@@ -158,7 +158,7 @@ function constructNradialbarchart(results) {
             "value": value
         })
     });
-    drawradialbarr(flatArray, min, max);
+    drawRadialChart(flatArray, min, max);
 }
 
 

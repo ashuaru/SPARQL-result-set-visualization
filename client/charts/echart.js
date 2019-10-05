@@ -2,7 +2,7 @@ function generateEQuery() {
     var country = $("#e_country").val();
     var sdate = $("#e_date").val();
 
-    var lastQueryParams = { "e_country": country, "e_date": sdate};
+    var lastQueryParams = { "e_country": country, "e_date": sdate };
     localStorage.setItem("last_query_params", JSON.stringify(lastQueryParams));
     localStorage.setItem("last_query_type", "e");
 
@@ -31,13 +31,13 @@ function constructEColumnChart(results) {
         var val = Number(data.binding[1].literal["#text"]);
         graphD.push({ salesperson: uri, sales: val })
     });
-    drawBarChart(graphD,"Field");
+    drawBarChart(graphD, "Field");
 }
 function constructEradialbarchart(results) {
     var flatArray = [];
     var min = Infinity, max = -Infinity;
     results.forEach(data => {
-         var uri = data.binding[0].uri.split("#")[1];
+        var uri = data.binding[0].uri.split("#")[1];
         //var nameMapping = {InformationSystems: "IS",ComputerSystemsOrganization: "CSO",SoftwareEngineering: "SE",WorldWideWeb: "WWW",ArtificialIntelligence: "AI",HumanCenteredComputing: "HCC",TheoryOfComputations: "TOC",SecurityAndPrivacy: "SEC"};
         uri = nameMapping[uri];
         var val = Number(data.binding[1].literal["#text"]);
@@ -52,8 +52,8 @@ function constructEradialbarchart(results) {
             "value": val
         })
     });
-    drawradialbarr(flatArray, min, max);
-} 
+    drawRadialChart(flatArray, min, max);
+}
 function constructELineChart(results) {
     var acceptanceData = [
         {
@@ -109,7 +109,7 @@ function constructEBarChart(results) {
         //$(gElements[loop]).find("text").attr("transform","rotate(-45)");
     }
 }
-function constructEDonutChart(results){
+function constructEDonutChart(results) {
     var resultModified = [];
     var count = 0;
     results.forEach(data => {
@@ -133,18 +133,18 @@ function constructEDonutChart(results){
 
 function drawElolipop(results) {
     var loliData = [];
-    var maxVal=-Infinity, minVal=Infinity;
+    var maxVal = -Infinity, minVal = Infinity;
     results.forEach((obj, i) => {
         var uri = obj.binding[0].uri.split("#")[1];
-        var nameMapping = {InformationSystems: "IS",ComputerSystemsOrganization: "CSO",SoftwareEngineering: "SE",WorldWideWeb: "WWW",ArtificialIntelligence: "AI",HumanCenteredComputing: "HCC",TheoryOfComputations: "TOC",SecurityAndPrivacy: "SEC"};
+        var nameMapping = { InformationSystems: "IS", ComputerSystemsOrganization: "CSO", SoftwareEngineering: "SE", WorldWideWeb: "WWW", ArtificialIntelligence: "AI", HumanCenteredComputing: "HCC", TheoryOfComputations: "TOC", SecurityAndPrivacy: "SEC" };
         uri = nameMapping[uri];
         var accRate = Number(obj.binding[1].literal["#text"]);
-        if(accRate>maxVal){
+        if (accRate > maxVal) {
             maxVal = accRate;
 
         }
         //if(numberofevents<minVal){
-           // minVal = numberofevents;
+        // minVal = numberofevents;
         //}
         loliData.push({
             Country: uri,
@@ -152,8 +152,8 @@ function drawElolipop(results) {
         })
     });
     console.log(maxVal);
-    drawSingleLoliPop(loliData,maxVal,"Count","Field");
-}  
+    drawSingleLoliPop(loliData, maxVal, "Count", "Field");
+}
 
 function constructEChart(results) {
     var chartSubType = $("#chart_type").val();
@@ -167,7 +167,7 @@ function constructEChart(results) {
         constructEColumnChart(results);
     } else if (chartSubType == "lollipop_single") {
         drawElolipop(results);
-    }else  {
+    } else {
         constructELineChart(results);
     }
 }

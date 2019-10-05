@@ -1,0 +1,40 @@
+/*.radial_chart body {
+  font: 12px sans-serif;
+}*/
+
+.radial_chart svg {
+  margin: 0px auto;
+  display: block;
+}
+
+.radial_chart path.arc {
+  opacity: 0.9;
+  transition: opacity 0.5s;
+}
+
+.radial_chart path.arc:hover {
+  opacity: 0.7;
+}
+
+.radial_chart .axis line, .axis circle  {
+  stroke: #cccccc;
+  stroke-width: 1px
+}
+
+.radial_chart .axis circle {
+  fill: none;
+}
+
+.radial_chart .r.axis text {
+  text-anchor: end
+}
+
+.radial_chart .tooltip {
+  position: absolute;
+  display: none;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 3px;
+  box-shadow: -3px 3px 15px #888;
+  color: white;
+  padding: 6px;
+}

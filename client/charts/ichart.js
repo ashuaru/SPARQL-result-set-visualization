@@ -1,7 +1,7 @@
 function generateIQuery() {
     var year = $("#i_year").val();
 
-    var lastQueryParams = { "i_year": year};
+    var lastQueryParams = { "i_year": year };
     localStorage.setItem("last_query_params", JSON.stringify(lastQueryParams));
     localStorage.setItem("last_query_type", "i");
 
@@ -99,7 +99,7 @@ function constructIBarChart(results) {
         //$(gElements[loop]).find("text").attr("transform","rotate(-45)");
     }
 }
-function constructIAreaChart(results){
+function constructIAreaChart(results) {
     var areaData = [];
     results.forEach((obj, i) => {
         var event = obj.binding[0].uri.split("#")[1];
@@ -120,7 +120,7 @@ function constructIAreaChart(results){
         $(gElements[len]).find("text").text(areaData[loop].actual);
     }
 }
-function constructIPlatelets(results){
+function constructIPlatelets(results) {
     var areaData = [];
     results.forEach((obj, i) => {
         var event = obj.binding[0].uri.split("#")[1];
@@ -137,7 +137,7 @@ function constructIPlatelets(results){
 }
 function drawIlolipop(results) {
     var loliData = [];
-    var maxVal=-Infinity, minVal=Infinity;
+    var maxVal = -Infinity, minVal = Infinity;
     results.forEach((obj, i) => {
         var event = obj.binding[0].uri.split("#")[1];
         console.log(event);
@@ -146,12 +146,12 @@ function drawIlolipop(results) {
         console.log(event);
 
         var numberofevents = Number(obj.binding[1].literal["#text"]);
-        if(numberofevents>maxVal){
+        if (numberofevents > maxVal) {
             maxVal = numberofevents;
 
         }
         //if(numberofevents<minVal){
-           // minVal = numberofevents;
+        // minVal = numberofevents;
         //}
         loliData.push({
             Country: event,
@@ -159,13 +159,13 @@ function drawIlolipop(results) {
         })
     });
     console.log(maxVal);
-    drawSingleLoliPop(loliData,maxVal,"Count","Field");
-} 
+    drawSingleLoliPop(loliData, maxVal, "Count", "Field");
+}
 function constructIradialbarchart(results) {
     var flatArray = [];
     var min = Infinity, max = -Infinity;
     results.forEach(data => {
-         var uri = data.binding[0].uri.split("#")[1];
+        var uri = data.binding[0].uri.split("#")[1];
         //var nameMapping = {InformationSystems: "IS",ComputerSystemsOrganization: "CSO",SoftwareEngineering: "SE",WorldWideWeb: "WWW",ArtificialIntelligence: "AI",HumanCenteredComputing: "HCC",TheoryOfComputations: "TOC",SecurityAndPrivacy: "SEC"};
         uri = nameMapping[uri];
         var val = Number(data.binding[1].literal["#text"]);
@@ -180,8 +180,8 @@ function constructIradialbarchart(results) {
             "value": val
         })
     });
-    drawradialbarr(flatArray, min, max);
-} 
+    drawRadialChart(flatArray, min, max);
+}
 
 function constructIChart(results) {
     var chartSubType = $("#chart_type").val();
