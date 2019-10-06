@@ -16,7 +16,7 @@ Following this instruction:
   `pip install pandas`
 5. Open the command prompt from the project folder and install the node dependencies using command
   `npm i`.
-6. In command prompt,run `node app.js`. In browser, hit http://localhost:4800 to view the app. 
+6. Start server using command `node app.js` in command prompt. In browser, hit http://localhost:4800 to view the app. 
 # Sample visualization chart
 ![Bubble chart](/client/images/bubble.PNG)
 
@@ -35,6 +35,6 @@ Following this instruction:
 
 In browser, hit http://localhost:4800 to view the app.
 A video description is available at[https://drive.google.com/open?id=1clbcrodSrZ7rTLd5l1_VK4npnfHWFzAR]
-Start server using node app.js
+
 
 
