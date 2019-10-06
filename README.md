@@ -34,7 +34,7 @@ Following this instruction:
 # Running VizResu
 
 In browser, hit http://localhost:4800 to view the app.
-A video description is available at
+A video description is available at[https://drive.google.com/open?id=1oj2k9pJtnmmtIEPoOpLOPNEPsf95NCtT]
 
 
 
