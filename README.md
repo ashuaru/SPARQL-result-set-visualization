@@ -21,7 +21,10 @@ Following this instruction:
 ![Lollipop chart](/client/images/lollipop.PNG)
 
  This lollipop chart describes the visualized result of submitted and accepted papers of each series in computer science research communities.
+ 
  ![Donut chart](/client/images/Donut.PNG)
+ 
+ Donut chart describes the visualized results of eight fields in computer science research communities.
  # Workflow of VizResu
  ![Workflow](/client/images/UI.PNG)
  
