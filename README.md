@@ -18,7 +18,7 @@ Following this instruction:
   `npm i`.
 6. Start server using command `node app.js` in command prompt. In browser, hit http://localhost:4800 to view the app. 
 # Sample visualization chart
-![Bubble chart](/client/images/bubble.PNG)
+![Lollipop chart](/client/images/lollipop.PNG)
 
  This bubble chart describes the visualized result of top ten countries hosted most of the events in computer science research communities.
  # Workflow of VizResu
