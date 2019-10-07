@@ -20,7 +20,7 @@ Following this instruction:
 # Sample visualization chart
 ![Lollipop chart](/client/images/lollipop.PNG)
 
- This bubble chart describes the visualized result of top ten countries hosted most of the events in computer science research communities.
+ This lollipop chart describes the visualized result of submitted and accepted papers of each series in computer science research communities.
  # Workflow of VizResu
  ![Workflow](/client/images/UI.PNG)
  
