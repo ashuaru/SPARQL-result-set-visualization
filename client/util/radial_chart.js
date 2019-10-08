@@ -117,8 +117,8 @@ function drawRadialChart(data) {
     return getInnerRadius(index) + arcWidth;
   }
 
-  data.forEach(element => {
+  /*data.forEach(element => {
     $("#legends").append(`<span class="legend_rect" style="background-color:${color(element.value)}"></span><span style="float:left;">${element.name}</span><br>`)
-  });
+  });*/
 
 }
