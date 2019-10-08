@@ -1,4 +1,4 @@
-# SPARQL-result-set-visualization
+# VizResu, a SPARQL resultset visualization tool
 VizResu is a web-based service for the visualization of linked data retrieved by a public SPARQL endpoint.
 A specific scholarly knowledge graph is considered as a use case for analyzing metadata of renowned scientific events in eight computer science sub-domains.
 It is a semi-automatic approach that generates various charts from SPARQL queries over data represented as RDF graphs,
@@ -6,7 +6,7 @@ A decision tree classifier is used to automatically detect the type of the produ
 VizResu is designed to support semantic data analysis by visualizing the results of predefined query templates using an asynchronous web application.
 
 
-# Prerequisites and instructions for installation
+## Prerequisites and instructions for installation
 Following this instruction:
 1. Download and install Node JS from this link https://nodejs.org/en/.
 2. Download and install Python from this link https://www.python.org/downloads/.
@@ -17,15 +17,13 @@ Following this instruction:
 5. Open the command prompt from the project folder and install the node dependencies using command
   `npm i`.
 6. Start server using command `node app.js` in command prompt. In browser, hit http://localhost:4800 to view the app. 
-# Sample visualization chart
-![Lollipop chart](/client/images/lollipop.PNG)
 
- This lollipop chart describes the visualized result of submitted and accepted papers of each series in computer science research communities.
- 
- ![Donut chart](/client/images/Donut.PNG)
- 
- Donut chart describes the visualized results of eight fields in computer science research communities.
- # Workflow of VizResu
+## Running VizResu
+
+In browser, hit http://localhost:4800 to view the app.
+A video description is available at[https://drive.google.com/open?id=1oj2k9pJtnmmtIEPoOpLOPNEPsf95NCtT]
+
+ ## Workflow of VizResu
  ![Workflow](/client/images/UI.PNG)
  
   1) Selecting one of the query predefined queries. 
@@ -35,10 +33,15 @@ Following this instruction:
   5) Visualizing the SPARQL query results.
   6) Interactive charts produced.
   
-# Running VizResu
+## Sample visualization chart
+![Lollipop chart](/client/images/lollipop.PNG)
 
-In browser, hit http://localhost:4800 to view the app.
-A video description is available at[https://drive.google.com/open?id=1oj2k9pJtnmmtIEPoOpLOPNEPsf95NCtT]
+ This lollipop chart describes the visualized result of submitted and accepted papers of each series in computer science research communities.
+ 
+ ![Donut chart](/client/images/Donut.PNG)
+ 
+ Donut chart describes the visualized results of eight fields in computer science research communities.
+
 
 
 
