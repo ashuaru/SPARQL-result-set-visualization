@@ -40,7 +40,7 @@ A video description is available at[https://drive.google.com/open?id=1oj2k9pJtnm
  
  ![Donut chart](/client/images/Donut.PNG)
  
- Donut chart describes the visualized results of eight fields in computer science research communities.
+ Donut chart describes the visualized results of eight computer science fields in events knowledege graph.
 
 
 
