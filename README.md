@@ -19,8 +19,8 @@ Following this instruction:
 6. Start server using command `node app.js` in command prompt. In browser, hit http://localhost:4800 to view the app. 
 
 ## Model Training
-1.Update Sample data
-2.use cmd `python Graph_training.py` in cmd prompt within file folder and enter
+1.Update Sample data.
+2.use cmd `python Graph_training.py` in cmd prompt within file folder and enter.
 
 
 ## Running VizResu
