@@ -120,8 +120,8 @@
 					<option value="l">Query 12 - Find the geographical distribution of the top event in each CS community</option>
 					<option value="m">Query 13 - Which events have had Google, Amazon, FB as their sponsors in 2018, 2017, 2016?</option>
 					<option value="n">Query 14 - Which Publisher has published most of the event's proceedings in CS communities?</option>
-					<option value="o">Query 15 - Find the Average acceptance rate of top ten series in CS community </option-->
-					
+					<option value="o">Query 15 - Find the Average acceptance rate of top ten series in CS community </option>
+					<option value="custom">Type your own query</option-->
 				</select>
 			</div>
 			<div id="a_options" style="display: none; margin-top:20px;" class="options">
@@ -235,7 +235,8 @@
 						<option value="automatic">Automatic</option>
 					</select>
 					<select id="chart_type" class="form-control type_params" style="display:none;"></select>
-					<input type="button" value="Visualize" id="chart_button" onclick="sendRequest();" class="btn btn-primary">
+					<input type="button" value="Visualize" onclick="sendRequest();" class="btn btn-primary">
+					<input type="button" value="Download" onclick="sendRequest(true);" class="btn btn-primary">
 				</div>
 			</div>
 		</div>

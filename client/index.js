@@ -94,7 +94,7 @@ var chartTypesAvailable = {
     //b: `<option value="bubble">Bubble chart</option><option value="tree">Tree chart</option><option value="bar">Bar chart</option><option value="column">Column chart</option><option value="line">Line chart</option>`,
     b: `<option value="bubble">Bubble chart</option><option value="tree">Tree chart</option>`,
     c: `<option value="bar">Bar chart</option><option value="column">Column chart</option><option value="line">Line chart</option><option value="lollipop">Lollipop chart</option>`,
-    d: `<option value="bubble">Bubble chart</option><option value="lollipop_single">Lollipop Chart</option><option value="bar">Bar chart</option><option value="column">Column chart</option><option value="line">Line chart</option>`,
+    d: `<option value="bubble">Bubble chart</option><option value="lollipop">Lollipop Chart</option><option value="bar">Bar chart</option><option value="column">Column chart</option><option value="line">Line chart</option>`,
     e: `<option value="donut">Donut chart</option><option value="radialbar">Radial chart</option><option value="lollipop_single">Lollipop Chart</option><option value="bar">Bar chart</option><option value="column">Column chart</option><option value="line">Line chart</option>`,
     f: `<option value="bar">Bar chart</option><option value="column">Column chart</option><option value="line">Line chart</option><option value="lollipop">Lollipop chart</option>`,
     //g: `<option value="radial_bar">Radial bar chart</option><option value="donut">Donut chart</option><option value="bar">Bar chart</option><option value="column">Column chart</option><option value="line">Line chart</option>`,
@@ -119,7 +119,7 @@ var nameMapping = {
     TheoryOfComputations: "TOC",
     SecurityAndPrivacy: "SEC"
 };
-function sendRequest() {
+function sendRequest(isDownload) {
     var query = $("#query").val();
     if (!query) {
         alert("Query can't be empty");
@@ -135,12 +135,31 @@ function sendRequest() {
     //$("#query_div").slideUp();
 
     if (chartType == "customChart" || $("#chart_main_type").val() == "automatic") {
-        executeCustomQuery(query)
+        executeCustomQuery(query, isDownload)
     } else {
-        executeStandardQuery(query)
+        executeStandardQuery(query, isDownload)
     }
 }
-function executeStandardQuery(query) {
+function downloadResults(result) {
+    var filename = "results.json";
+    var blob = new Blob([JSON.stringify(result)], { type: "text/json" });
+    var link = document.createElement('a');
+    //console.log(link);
+    link.href = window.URL.createObjectURL(blob);
+    link.download = filename;
+
+    if (window.navigator.msSaveBlob) {
+        window.navigator.msSaveBlob(blob, filename);
+    } else {
+        document.body.appendChild(link);
+        setTimeout(function () {
+            document.body.removeChild(link);
+            window.URL.revokeObjectURL(link.href);
+        }, 1000);
+        link.click();
+    }
+}
+function executeStandardQuery(query, isDownload) {
     var url = `/queryResult?query=${encodeURIComponent(query)}&noParse=true`;
     $.ajax({
         url: url,
@@ -155,6 +174,9 @@ function executeStandardQuery(query) {
                 alert("No results found");
                 return;
             }
+            if (isDownload) {
+                return downloadResults(results);
+            }
             if (!(results instanceof Array)) {
                 results = [results]
             }
@@ -166,7 +188,7 @@ function executeStandardQuery(query) {
         }
     });
 }
-function executeCustomQuery(query) {
+function executeCustomQuery(query, isDownload) {
     var url = `/queryResult?query=${encodeURIComponent(query)}`;
     $.ajax({
         url: url,
@@ -176,6 +198,9 @@ function executeCustomQuery(query) {
             if (!results || results.length == 0) {
                 alert("No results found");
                 return;
+            }
+            if (isDownload) {
+                return downloadResults(results);
             }
             extractCols(query, results);
         },
